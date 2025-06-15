@@ -1,4 +1,4 @@
-# Calculator_react_TypeScript
+# **Calculator_react_TypeScript**
 
 ## Full-Stack Calculator Project
 
