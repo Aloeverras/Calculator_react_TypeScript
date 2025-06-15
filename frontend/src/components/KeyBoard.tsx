@@ -1,19 +1,25 @@
 import type React from "react";
 import type { PropsKeyBoard } from "../interfaces/PropsKeyBoard";
-import { Button } from "reactstrap";
+import { Button, ButtonGroup } from "reactstrap";
 
 const KeyBoard : React.FC<PropsKeyBoard> = (props : PropsKeyBoard) => {
     return (
-        <div>
+        <div className="calculator-gid">
+            <div className="output">
+                <div className="previous-operand"></div>
+                <div className="previous-current"></div>
+            </div>
+            <ButtonGroup>
             {
-            props.buttonsBoard.map((btn : string) => (
-                btn === "=" ? (
-                    <Button className="span-two">=</Button>
-                ) : (
-                    <Button>{btn}</Button>
-                )
-            ))
-        }
+                props.buttonsBoard.map((btn : string) => (
+                    btn === "=" ? (
+                        <Button className="span-two">=</Button>
+                    ) : (
+                        <Button>{btn}</Button>
+                    )
+                ))
+            }
+            </ButtonGroup>
         </div>
     )
 };
