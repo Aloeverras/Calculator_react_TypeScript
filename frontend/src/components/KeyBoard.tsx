@@ -12,8 +12,8 @@ const KeyBoard : React.FC<PropsKeyBoard> = (props : PropsKeyBoard) => {
             <ButtonGroup>
             {
                 props.buttonsBoard.map((btn : string) => (
-                    btn === "=" ? (
-                        <Button className="span-two">=</Button>
+                    btn === "=" || btn === "AC" ? (
+                        <Button className="span-two">{btn}</Button>
                     ) : (
                         <Button>{btn}</Button>
                     )
