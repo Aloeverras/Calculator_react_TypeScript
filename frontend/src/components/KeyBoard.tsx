@@ -1,15 +1,13 @@
 import type React from "react";
 import type { PropsKeyBoard } from "../interfaces/PropsKeyBoard";
 import { Button, ButtonGroup } from "reactstrap";
+import DisplayCalculator from "./DisplayCalculator";
 
 const KeyBoard : React.FC<PropsKeyBoard> = (props : PropsKeyBoard) => {
     return (
-        <div className="calculator-gid">
-            <div className="output">
-                <div className="previous-operand"></div>
-                <div className="previous-current"></div>
-            </div>
-            <ButtonGroup>
+        <div>
+            <DisplayCalculator/>
+            <ButtonGroup  className="calculator-grid d-grid">
             {
                 props.buttonsBoard.map((btn : string) => (
                     btn === "=" || btn === "AC" ? (
