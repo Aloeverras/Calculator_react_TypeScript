@@ -1,6 +1,7 @@
 import type { CalculatorType } from "../types/CalculatorType";
 import type { CalculatorProps } from "../props/CalculatorProps";
 import type { JSX } from 'react'
+import KeyBoard from "./KeyBoard";
 
 const Calculator : CalculatorType = (props : CalculatorProps) => {
 
@@ -21,7 +22,9 @@ const Calculator : CalculatorType = (props : CalculatorProps) => {
     return (
         <div>
             {content}
-            <main></main>
+            <main>
+                <KeyBoard buttons={["e", "hd", "je"]} monoLetter={true}/>
+            </main>
         </div>
     );
 
