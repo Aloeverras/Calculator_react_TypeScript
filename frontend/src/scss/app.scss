@@ -1,23 +1,4 @@
-$firstColor : #00AAFF;
-$secondColor : #00FF6C ;
 
 *, *::before, *::after {
     box-sizing: border-box;
-}
-
-body {
-    background : linear-gradient(to right, $firstColor, $secondColor);
-    .calculator-grid {
-        margin-top: 2rem;
-        grid-template-columns: repeat(4, 6rem);
-        grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
-        .span-two {
-            grid-column: span 2;
-        }
-        .output {
-            grid-column: 1 / -1;
-            background-color: rgba(0, 0, 0, .75);
-            display: flex;
-        }
-    }
 }
