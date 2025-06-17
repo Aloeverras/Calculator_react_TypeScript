@@ -23,7 +23,13 @@ const Calculator : CalculatorType = (props : CalculatorProps) => {
         <div>
             {content}
             <main>
-                <KeyBoard buttons={["e", "hd", "je"]} monoLetter={true}/>
+                <KeyBoard buttons={
+                    Array.from(
+                        {length : 10},
+                         (_ : unknown, index : number) => index.toString()
+                         )
+                         }
+                         monoLetter={true}/>
             </main>
         </div>
     );
