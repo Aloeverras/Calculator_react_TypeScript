@@ -1,3 +1,3 @@
-import type { JSX } from "react";
+import type { FunctionComponent } from "react";
 
-export type CalculatorType = () => JSX.Element;
+export type CalculatorType = FunctionComponent;
