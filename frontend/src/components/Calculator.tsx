@@ -1,14 +1,15 @@
-import type React from "react";
-import type { PropsCalculator } from "../interfaces/PropsCalculator";
+import type { CalculatorType } from "../types/CalculatorType";
+import type { CalculatorProps } from "../props/CalculatorProps";
 
-
-const Calculator : React.FC<PropsCalculator> = () => {
+const Calculator : CalculatorType = (props : CalculatorProps) => {
     return (
         <div>
-            <h1></h1>
-            <main>
-            
-            </main>
+            {
+                props.title ? (
+                    <h1>Calculatrice</h1>
+                ) : <></>
+            }
+            <main></main>
         </div>
     );
 };

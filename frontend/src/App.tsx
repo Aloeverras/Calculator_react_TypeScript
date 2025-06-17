@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Calculator/>
+      <Calculator title={false}/>
     </>
   )
 }
