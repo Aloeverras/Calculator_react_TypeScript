@@ -1,11 +1,10 @@
 import Calculator from "./components/Calculator"
 import "./scss/app.scss"
 
-function App() {
-
+const App = () => {
   return (
     <>
-      <Calculator title={false}/>
+      <Calculator title={true}/>
     </>
   )
 }

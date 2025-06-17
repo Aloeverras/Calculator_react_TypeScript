@@ -1,17 +1,24 @@
 import type { CalculatorType } from "../types/CalculatorType";
 import type { CalculatorProps } from "../props/CalculatorProps";
+import type { JSX } from "react";
 
 const Calculator : CalculatorType = (props : CalculatorProps) => {
+
+    let content : JSX.Element | null;
+
+    if (props.title) {
+        content = <h1>Calculator</h1>;
+    } else {
+        content = null;
+    };
+
     return (
         <div>
-            {
-                props.title ? (
-                    <h1>Calculatrice</h1>
-                ) : <></>
-            }
+            {content}
             <main></main>
         </div>
     );
+    
 };
 
 export default Calculator;
