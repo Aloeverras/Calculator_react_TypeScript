@@ -1,4 +1,3 @@
-import type React from "react";
-import type { CalculatorProps } from "../props/CalculatorProps";
+import type { JSX } from "react";
 
-export type CalculatorType = React.FC<CalculatorProps>;
+export type CalculatorType = () => JSX.Element;

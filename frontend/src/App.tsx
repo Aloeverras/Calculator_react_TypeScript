@@ -4,7 +4,10 @@ import "./scss/app.scss"
 const App = () => {
   return (
     <>
-      <Calculator title={true}/>
+      <h1>Calculator</h1>
+      <main>
+        <Calculator/>
+      </main>
     </>
   )
 }
