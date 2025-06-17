@@ -1,4 +1,7 @@
+import type { ButtonListType } from "../types/ButtonListType";
+
 export type KeyBoardProps = {
     monoLetter : boolean,
-    buttons : string[]
+    nameList : string,
+    buttons : ButtonListType
 };

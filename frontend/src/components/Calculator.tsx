@@ -1,7 +1,10 @@
 import type { CalculatorType } from "../types/CalculatorType";
 import type { CalculatorProps } from "../props/CalculatorProps";
 import type { JSX } from 'react'
-import KeyBoard from "./KeyBoard";
+import NumberKeyBoard from "./NumberKeyBoard";
+import OperationKeyBoard from "./OperationKeyBoard";
+import FinalyKeyBoard from "./FinalyKeyBoard";
+import ZerosTeam from "./ZerosTeam";
 
 const Calculator : CalculatorType = (props : CalculatorProps) => {
 
@@ -23,13 +26,14 @@ const Calculator : CalculatorType = (props : CalculatorProps) => {
         <div>
             {content}
             <main>
-                <KeyBoard buttons={
-                    Array.from(
-                        {length : 10},
-                         (_ : unknown, index : number) => index.toString()
-                         )
-                         }
-                         monoLetter={true}/>
+                <div>
+                    <NumberKeyBoard/>
+                    <OperationKeyBoard/>
+                </div>
+                <div>
+                    <FinalyKeyBoard/>
+                    <ZerosTeam/>
+                </div>
             </main>
         </div>
     );
