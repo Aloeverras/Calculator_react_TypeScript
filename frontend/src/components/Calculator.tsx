@@ -1,11 +1,12 @@
 import type { CalculatorType } from "../types/CalculatorType";
-import ButtonCalculator from "./ButtonCalculator";
+import Board from "./Board";
+import "../scss/calculator.scss"
 
 const Calculator : CalculatorType = () => {
     return (
-        <>
-            <ButtonCalculator label="test" id="test-id"/>
-        </>    
+        <div id="calculator">
+            <Board/>
+        </div>
     );
 
 };
