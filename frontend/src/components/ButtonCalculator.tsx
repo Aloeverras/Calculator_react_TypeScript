@@ -3,7 +3,7 @@ import type { ButtonCalculatorProps } from "../types/ButtonCalculatorProps";
 import type { ButtonCalculatorType } from "../types/ButtonCalculatorType";
 import {Button} from "reactstrap";
 
-const ButtonCalculator : ButtonCalculatorType = ({label = "", id = "", classNames = "", isMono = false, ...rest} : ButtonCalculatorProps) => {
+const ButtonCalculator : ButtonCalculatorType = ({label = "", id = "", classNames = "button-calculator", isMono = false, ...rest} : ButtonCalculatorProps) => {
 
     label = isMono && label.length > 1 ? label.charAt(0) : label;
 
@@ -19,18 +19,20 @@ const ButtonCalculator : ButtonCalculatorType = ({label = "", id = "", className
 
     const HANDCLICK : () => void = () => {
         if (rest.onClick) {
-            rest.onClick()
+            rest.onClick();
         } else {
-            console.error("handclic error")
+            console.error("handclic error");
         }
     }
 
     return (
-        <Button onClick={HANDCLICK}
-        id={id}
-        className={classNames}
-        {...rest}>    
-            {labelHook}
+        <Button 
+            onClick={HANDCLICK}
+            key={`${id}-key`}
+            id={`${id}-id-button-calculator`}
+            className={classNames}
+            {...rest}>    
+                {labelHook}
         </Button>
     );
 }
