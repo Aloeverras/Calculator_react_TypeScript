@@ -3,7 +3,15 @@ import type { ButtonCalculatorProps } from "../types/ButtonCalculatorProps";
 import type { ButtonCalculatorType } from "../types/ButtonCalculatorType";
 import {Button} from "reactstrap";
 
-const ButtonCalculator : ButtonCalculatorType = ({label = "", id = "", classNames = "button-calculator", isMono = false, ...rest} : ButtonCalculatorProps) => {
+const ButtonCalculator : ButtonCalculatorType = (
+    {
+        label = "",
+        id = "", 
+        classNames = "button-calculator", 
+        isMono = false, 
+        ...rest
+    } : ButtonCalculatorProps
+) => {
 
     label = isMono && label.length > 1 ? label.charAt(0) : label;
 
