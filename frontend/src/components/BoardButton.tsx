@@ -3,14 +3,21 @@ import type { BoardButtonType } from "../types/BoardButtonType";
 import type { ButtonCalculatorProps } from "../types/ButtonCalculatorProps";
 import ButtonCalculator from "./ButtonCalculator";
 
-const BoardButton : BoardButtonType = ({nameBoard = "", idBoard = "", buttons = []} : BoardButtonProps) => {
+const BoardButton : BoardButtonType = (
+    {
+        nameBoard = "",
+        idBoard = "", 
+        buttons = []
+    }
+     : BoardButtonProps) => {
     return (
-        <div id={`${idBoard}`} className={nameBoard}>
+        <div id={`${idBoard}-id-board`} className={`${nameBoard} board`}>
             {
-                buttons.map((btn : ButtonCalculatorProps) => (
+                buttons.map((btn : ButtonCalculatorProps, index : number) => (
                     <ButtonCalculator 
                         label={btn.label}
-                        id={btn.id}
+                        key={`${btn.label}-${nameBoard}-key`}
+                        id={`${btn.id}-id-${nameBoard}-${index}`}
                     />
                 ))
             }
