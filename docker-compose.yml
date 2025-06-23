@@ -1,0 +1,32 @@
+volumes:
+  front_data:
+
+services:
+  devcontainer:
+    tty : true
+    image : calculator_image:1.0.0.0
+    build:
+      context: .devcontainer/
+      dockerfile: Dockerfile
+      args :
+        USER_DEV : ${USER_DEV}
+        USER_ID : ${USER_ID}
+        GROUP_DEV : ${USER_DEV}
+        GROUP_ID : ${GROUP_ID}
+        PORT : ${DEVCONTAINER_PORT}
+    volumes:
+      - .:/workspace
+      - front_data:/workspace/frontend
+    ports:
+      - "5555:5555"
+  frontend:
+    image : node:slim
+    tty : true
+    expose : 
+      - 5173
+    working_dir: /workspace
+    user: 1000:1000
+    volumes:
+      - front_data:/workspace
+    ports:
+      - "5173:5173"
