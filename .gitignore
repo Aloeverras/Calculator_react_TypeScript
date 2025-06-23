@@ -1,0 +1,78 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.parcel-cache/
+
+# Dependency directories
+node_modules/
+node_modules
+jspm_packages/
+
+# Next.js
+.next/ # Next.js build output
+.swc/ # SWC cache (Next.js/various other tools)
+
+# Vite
+.vite/ # Vite cache directory
+
+# Build outputs
+build/
+dist/
+out/
+
+# Local environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging.local
+.env.preview.local
+
+# IDE-specific files
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+.c9/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Misc
+.cache/
+npm-shrinkwrap.json
+yarn.lock # Si tu utilises npm, tu peux l'ignorer
+package-lock.json # Si tu utilises yarn, tu peux l'ignorer
+
+# TypeScript
+*.tsbuildinfo
+
+# PostgreSQL
+# Si tu as des fichiers de configuration de base de données locaux ou des dumps
+# qui ne doivent pas être versionnés, ajoute-les ici.
+# Par exemple:
+# data/*.sql
+# pgdata/
+
+# Docker
+# Fichiers temporaires générés par Docker ou Docker Compose
+docker-compose.override.yml # Si tu utilises un override local pour des configs spécifiques
+*.env.docker 
+.docker/
+volume_data/ 
+*.pem 
+*.key
+.dockerignore 
+
+.devcontainer
+devcontainer.json
