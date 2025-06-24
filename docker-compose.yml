@@ -1,18 +1,23 @@
+networks:
+  caculator_n:
+  frontend_n:
+  devcontainer_n:
+
 services:
   devcontainer:
     tty : true
     image : calculator_image:1.0.0.0
+    user: 1000:1000
     build:
       context: .devcontainer/
       dockerfile: Dockerfile
       args :
-        USER_DEV : ${USER_DEV}
-        USER_ID : ${USER_ID}
-        GROUP_DEV : ${USER_DEV}
-        GROUP_ID : ${GROUP_ID}
         PORT : ${DEVCONTAINER_PORT}
     volumes:
       - .:/workspace
+    networks:
+      - caculator_n
+      - devcontainer_n
     ports:
       - "5555:5555"
   frontend:
@@ -23,5 +28,8 @@ services:
       dockerfile: Frontend.Dockerfile
     volumes:
       - ./frontend:/workspace
+    networks:
+      - caculator_n
+      - frontend_n
     ports:
       - "5173:5173"
