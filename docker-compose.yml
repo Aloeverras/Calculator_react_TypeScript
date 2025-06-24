@@ -11,8 +11,6 @@ services:
     build:
       context: .devcontainer/
       dockerfile: Dockerfile
-      args :
-        PORT : ${DEVCONTAINER_PORT}
     volumes:
       - .:/workspace
     networks:
