@@ -1,10 +1,10 @@
-import type { CalculatorButtonType } from "../types/CalculatorButtonType";
-import type { CalculatorButtonProps } from "../types/CalculatorButtonProps";
+import type { CalculatorButtonType } from "../types/buttonType/CalculatorButtonType";
+import type { CalculatorButtonProps } from "../types/buttonType/CalculatorButtonProps";
 import ButtonCalculator from "./ButtonCalculator";
 
-const NumberButtonCalculator : CalculatorButtonType<number> = ({label} : CalculatorButtonProps<number>) => {
+const NumberButtonCalculator: CalculatorButtonType<number> = ({ label }: CalculatorButtonProps<number>) => {
     return (
-        <ButtonCalculator label={label} id={`${label}-id-number-button`} className="number-button"/>
+        <ButtonCalculator label={label} />
     );
 }
 
