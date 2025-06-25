@@ -1,7 +1,8 @@
 import React, { type HTMLAttributes } from "react";
+import type { LabelType } from "./LabelType";
 
 export type CalculatorButtonProps<T> = React.ComponentProps<
     React.JSXElementConstructor<
-            {label : T} & HTMLAttributes<HTMLButtonElement>
+            {label : LabelType<T>} & HTMLAttributes<HTMLButtonElement>
         >  
     >

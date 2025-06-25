@@ -1,0 +1,1 @@
+export type LabelType<T> = T extends string ? string : number;
