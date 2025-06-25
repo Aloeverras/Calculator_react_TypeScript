@@ -1,11 +1,6 @@
-import React from "react";
-import type { JSXElementConstructor } from "react";
+import React, { type HTMLAttributes } from "react";
 
-export type CalculatorButtonProps = React.ComponentProps<
-    JSXElementConstructor<
-        {
-            label : string | number,
-            id : string
-        }
+export type CalculatorButtonProps<T> = React.ComponentProps<
+    React.JSXElementConstructor<T & HTMLAttributes<HTMLButtonElement>
+        >
     >
->;

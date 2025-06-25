@@ -1,12 +1,10 @@
-import type { JSX } from "react";
-import CalculatorButtonComponent from "./component/CalculatorButtonComponent";
-
+import { type JSX} from "react";
 
 const App : () => JSX.Element = () => {
   return (
     <>
       <h1>Hello world</h1>
-      <CalculatorButtonComponent label={5} id="5"/>
+      
     </>
   );
 }
