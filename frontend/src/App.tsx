@@ -6,7 +6,7 @@ const App : () => JSX.Element = () => {
   return (
     <>
       <h1>Hello world</h1>
-      <CalculatorButtonComponent children={5} id="5"/>
+      <CalculatorButtonComponent label={5} id="5"/>
     </>
   );
 }
