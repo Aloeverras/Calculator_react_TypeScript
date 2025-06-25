@@ -11,33 +11,48 @@ type buttonVariants = OperatorType | number | ZerosType;
 const ButtonCalculator: CalculatorButtonType<buttonVariants> = (
     { label }: CalculatorButtonProps<buttonVariants>
 ) => {
-
-    let classNamesButton: string = "button-";
-    let idNameButton: string = "id-";
-
-
+    
     const [btn, setBtn] = useState<LabelType<buttonVariants>>(label);
 
-    if (typeof btn === "number") {
-        classNamesButton += "number";
-    } else if (typeof label === "string") {
-        if (btn.charAt(0) === "0") {
-            classNamesButton += "zero-group"
+    const classNamesButton : string[] = ["border-0"];
+    const idNameButton : string[] = ["id", label.toString()];
+    
+    try {
+        if (typeof btn === "number") {
+            classNamesButton.push("number-button", "bg-warning", "text-dark");
+            idNameButton.push("n")
+            if (btn !== 0) {
+                if (btn % 2 === 0){
+                    classNamesButton.push("paire");
+                } else {
+                    classNamesButton.push("impaire");
+                }
+            }
         } else {
-            classNamesButton += "operator"
+            idNameButton.push("s")
+            if (btn.charAt(0) === "0") {
+                classNamesButton.push("zero-group-button")
+            } else if (btn !== "AC" && btn !== "C" && btn.length >= 1) {
+                classNamesButton.push("operator-button")
+            } else if (btn.charAt(0) === "." && btn.charAt(1) === "0") {
+                classNamesButton.push("decimal-zero-group-button")
+            } else if (btn === "AC" || btn === "C") {
+                classNamesButton.push("main-button")
+            }
+            else {
+                classNamesButton.push("operator-button")
+            }
         }
-    } else {
-        throw new Error("error className and id button calculator")
-    };
-
-    idNameButton += `${classNamesButton}-${btn.toString()}`;
+    } catch (e : unknown) {
+        console.error(e)
+    }
 
     useEffect(() => {
         setBtn(label);
-    }, [label]);
+    }, [btn]);
 
     return (
-        <Button id={idNameButton} className={classNamesButton} >
+        <Button id={idNameButton.join("-")} key={`ket-${idNameButton.join("-")}-key`} className={classNamesButton.join(" ")} >
             {btn}
         </Button>
     );

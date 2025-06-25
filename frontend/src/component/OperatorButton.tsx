@@ -5,7 +5,7 @@ import ButtonCalculator from "./ButtonCalculator";
 
 const OperatorButton: CalculatorButtonType<OperatorType> = ({ label }: CalculatorButtonProps<OperatorType>) => {
     return (
-        <ButtonCalculator label={label} id={`${label}-id-opérator-button`} className="operator-button" />
+        <ButtonCalculator label={label}/>
     );
 }
 
