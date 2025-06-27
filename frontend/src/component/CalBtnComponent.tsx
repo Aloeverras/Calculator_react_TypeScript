@@ -2,7 +2,7 @@ import type React from "react";
 import type { CalBtnProps } from "../interfaces/CalBtnProps";
 import {Button} from "reactstrap";
 
-const CalBtn : React.FC<CalBtnProps> = ({label, type, onClick, ...rest} : CalBtnProps) => {
+const CalBtn : React.FC<CalBtnProps> = ({label, type, ...rest} : CalBtnProps) => {
     
     const getColor = (type : CalBtnProps["type"]) : string => {
         switch(type) {
@@ -21,7 +21,7 @@ const CalBtn : React.FC<CalBtnProps> = ({label, type, onClick, ...rest} : CalBtn
     };
 
     return (
-        <Button color={getColor(type)} onClick={() => onClick(label)} {...rest}>
+        <Button color={getColor(type)} {...rest}>
             {label}
         </Button>
     );
