@@ -1,11 +1,30 @@
-import type { CalBtnProps } from "../types/CalBtnProps";
-import type { CalBtnType } from "../types/CalBtnType";
-import {Button} from "reactstrap"
+import type React from "react";
+import type { CalBtnProps } from "../interfaces/CalBtnProps";
+import {Button} from "reactstrap";
 
-const CalBtnComponent : CalBtnType<string | number> = ({label} : CalBtnProps<string | number>) => {
+const CalBtn : React.FC<CalBtnProps> = ({label, type, onClick, ...rest} : CalBtnProps) => {
+    
+    const getColor = (type : CalBtnProps["type"]) : string => {
+        switch(type) {
+            case "digit":
+            case "decimal":
+                return "secondary";
+            case "operator":
+                return "warning";      
+            case "eqal":
+                return "success";
+            case "clear":
+                return "danger";
+            default:
+                return "primary"     
+        }
+    };
+
     return (
-        <Button>{label}</Button>
+        <Button color={getColor(type)} onClick={() => onClick(label)} {...rest}>
+            {label}
+        </Button>
     );
-};
+}
 
-export default CalBtnComponent;
+export default CalBtn;
