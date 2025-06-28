@@ -1,8 +1,9 @@
 import type React from "react";
 import type { CalBtnProps } from "../interfaces/CalBtnProps";
 import {Button} from "reactstrap";
+import type { JSXElementConstructor } from "react";
 
-const CalBtn : React.FC<CalBtnProps> = ({label, type, ...rest} : CalBtnProps) => {
+const CalBtn : React.FC<CalBtnProps> = ({label, type, ...rest} : React.ComponentProps<JSXElementConstructor<CalBtnProps>>) => {
     
     const getColor = (type : CalBtnProps["type"]) : string => {
         switch(type) {
