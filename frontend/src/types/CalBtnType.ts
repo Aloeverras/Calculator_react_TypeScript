@@ -1,1 +1,0 @@
-export type CalBtnType = "digit" | "operator" | "eqal" | "clear" | "decimal";
