@@ -1,6 +1,7 @@
 networks:
   caculator_n:
   frontend_n:
+  backend_n:
   devcontainer_n:
 
 services:
@@ -31,3 +32,17 @@ services:
       - frontend_n
     ports:
       - "5173:5173"
+
+  backend:
+      tty : true
+      user: 1000:1000
+      build:
+        context: backend/
+        dockerfile: Backend.Dockerfile
+      volumes:
+        - ./backend:/workspace
+      networks:
+        - caculator_n
+        - backend_n
+      ports:
+        - "3000:3000"      

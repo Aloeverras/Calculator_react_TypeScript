@@ -1,0 +1,1 @@
+export type TypeBtn = "calcul" | "operator" | "zeros" | "main";
